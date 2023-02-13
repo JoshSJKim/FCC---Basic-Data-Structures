@@ -20,7 +20,7 @@ let complexArray = [
   [
     {
       one: 1,
-      tow: 2
+      two: 2
     },
     {
       three: 3,
