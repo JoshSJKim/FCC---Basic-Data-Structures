@@ -216,3 +216,29 @@ console.log(forecast(weatherConditions)); // console will display ['warm', 'sunn
 console.log(weatherConditions);  // The original array is not modified ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
 ```
 
+## Copy an Array with the Spread Operator
+
+- While slice() method allows selective extraction, the use of spread operator allows you to copy an entire array and assign it to a new array.
+  
+```js
+let thisArray = [true, true, undefined, false, null];
+let thatArray = [...thisArray];   // (...) is the spread operator
+console.log(thatArray);   // console will display the exact same array as 'thisArray'
+```
+
+### Exercise (spread operator)
+
+- function 'copyMachine' will take an array and a number as its arguments
+- The function is supposed to return a new array comprised of 'num' copies of the array
+
+```js
+function copyMachine(arr, num) {  // function copyMachine will take an array and a number value 'num' as its arguments
+  let newArr = [];                // When function is called, a new array 'newArr' is created with an empty string
+  while (num >= 1) {              // the condition: while 'num' value passed is greater than or equal to 1, execute the following
+    let obj = [...arr];           // This part isn't really necessary, but it passes. Declare a variable 'obj' with the array 'arr' unpacked using spread operator
+    newArr.push(obj);             // push declared 'obj' into new array 'newArr' while condition is true (newArr.push([...arr]); is viable as well)
+    num--;                        // decrement 'num' value by 1 for every loop until num = 1.
+  }
+  return newArr;                  // return newArr
+}
+```
