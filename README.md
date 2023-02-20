@@ -183,3 +183,35 @@ console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'Pal
 ```
 
 - Console will display ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']
+
+## Copy Array Items Using slice()
+
+- slice() - not splice() - is a method used to copy or extract defined number of elements into a new array.
+- The original array which is called upon is not modified at all.
+- slice() takes two parameters
+  - first parameter defines the index at which the extraction begins
+  - second parameter defines the index at which the extraction stops
+- NOTE: Extraction will occur up to, but not include the element at the index at which extraction stops.
+
+```js
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+let todaysWeather = weatherConditions.slice(1, 3);
+console.log(todaysWeather);   // ['snow', 'sleet']
+console.log(weatherConditions); // ['rain', 'snow', 'sleet', 'hail', 'clear']
+```
+
+### Exercise
+
+- extract 'warm' and 'sunny' and assign it to a new array
+
+```js
+let weatherConditions = ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'] // weather conditions object is declared globally with its array
+function forecast(arr) {
+  let todaysForecast = arr.slice(2, 4); // slice method to extract 'warm' and 'sunny' from the array passed to the function
+  console.log(todaysForecast);    // console.log method to check if the return value is indeed the result expected. block scope. It will not show outside the function
+  return todaysForecast;
+}
+
+console.log(forecast(weatherConditions)); // console will display ['warm', 'sunny'] as a result of returning the result of the 'forecast' function globally
+console.log(weatherConditions);  // The original array is not modified ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
+```
