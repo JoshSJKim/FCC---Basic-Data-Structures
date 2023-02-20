@@ -146,3 +146,40 @@ arr.shift();        // remove the first element first
 arr.splice(3, 4);   // based on the remaining array elements, remove 4 elements beginning at index[3]
 console.log(arr;)   // [4, 5, 1]
 ```
+
+## Add Items Using splice()
+
+- splice() method could actually take up to three parameters.
+- First two are the same.
+  - first, to indicate the start index
+  - second, to indicate the number of elements to delete from the start index.
+- The third parameter (could be comprised of multiple elements) is used to add items in place of the elements that were removed.
+
+- There are a number of ways to go about this
+- You could initialize variables to pass to the parameters
+
+```js
+const numbers = [10, 11, 12, 12, 15];   // nonsense sequence of numbers
+const startIndex = 3;                   // indicate which element to start, the second 12
+const amountToDelete = 1;               // delete 1 element, which is the indicated element itself
+
+numbers.splice(startIndex, amountToDelete, 13, 14); // start at index 3 (12), delete 1 element (12), and add in 13 and 14 it its place
+console.log(numbers);   // [10, 11, 12, 13, 14, 15] A sensible sequence of numbers
+```
+
+Or go directly to the array.
+
+### Exercise
+
+Remove first two color names from the array and add in 'DarkSalmon' and 'BlanchedAlmond' in its place
+
+```js
+function htmlColorNames(arr) {
+  arr.splice(0, 2, 'DarkSalmon', 'BlanchedAlmond');
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+```
+
+- Console will display ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']
