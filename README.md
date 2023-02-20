@@ -269,3 +269,51 @@ function spreadOut() {
 
 console.log(spreadOut());  // ['learning', 'to', 'code', 'is', 'fun']
 ```
+
+## Check for the Presence of an Element with indexOf()
+
+- Arrays can be changed, or mutated, at any given time.
+- There is no guarantee about where a specific data will be on a given array, or if that element even exists.
+- Use indexOf() to check for the existence of the specified element in an array.
+- indexOf() takes an element as its parameter.
+- When called, it will return its index position in the array, or '-1' if the data does not exist.
+
+```js
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+
+fruits.indexOf('dates');    // -1
+fruits.indexOf('pears');    // 1 - It will return the first index at which the specified element is found
+fruits.indexOf('apples');   // 0
+```
+
+### Exercise (indexOf())
+
+- function quickCheck takes an array 'arr' and an element 'elem' as its arguments.
+- Modify the function using indexOf() so that it returns 'true' if the passed element exists in the array and 'false' if it does not.
+
+```js
+function quickCheck(arr, elem) {
+  if (arr.indexOf(elem) >= 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+
+- The above is more traditional syntax
+- It can be simplified using the ternary condition
+
+```js
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) >= 0 ? true : false;
+}
+```
+
+- Another method is simply returning the comparison
+
+```js
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) != -1;
+}
+```
