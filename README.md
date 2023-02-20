@@ -137,3 +137,12 @@ arr.splice(4, 4);   // remove 4 elements beginning at 7
 arr.shift();        // remove the first element
 console.log(arr);   // [4, 5, 1]
 ```
+
+Or, this works as well
+
+```js
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+arr.shift();        // remove the first element first
+arr.splice(3, 4);   // based on the remaining array elements, remove 4 elements beginning at index[3]
+console.log(arr;)   // [4, 5, 1]
+```
