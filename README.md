@@ -216,7 +216,9 @@ console.log(forecast(weatherConditions)); // console will display ['warm', 'sunn
 console.log(weatherConditions);  // The original array is not modified ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
 ```
 
-## Copy an Array with the Spread Operator
+## Spread Operator
+
+### Copy an Array with spread operator
 
 - While slice() method allows selective extraction, the use of spread operator allows you to copy an entire array and assign it to a new array.
   
@@ -226,7 +228,7 @@ let thatArray = [...thisArray];   // (...) is the spread operator
 console.log(thatArray);   // console will display the exact same array as 'thisArray'
 ```
 
-### Exercise (spread operator)
+#### Exercise (copy with spread operator)
 
 - function 'copyMachine' will take an array and a number as its arguments
 - The function is supposed to return a new array comprised of 'num' copies of the array
@@ -241,4 +243,29 @@ function copyMachine(arr, num) {  // function copyMachine will take an array and
   }
   return newArr;                  // return newArr
 }
+```
+
+### Combine Arrays with the spread operator
+
+- The spread operator also provides the ability to combine arrays (i.e. insert all the elements of one array into another, at any index)
+- Traditional syntaxes also provides the ability to concatenate arrays, but it only allows combining arrays at the end, or beginning of another.
+
+```js
+let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
+let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
+```
+
+#### Exercise (combine with spread operator)
+
+- function spreadOut should return the variable 'sentence'
+- Modify the function using the spread operator so that it returns the array ['learning', 'to', 'code', 'is', 'fun']
+
+```js
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence
+}
+
+console.log(spreadOut());  // ['learning', 'to', 'code', 'is', 'fun']
 ```
