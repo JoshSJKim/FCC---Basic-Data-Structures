@@ -169,7 +169,7 @@ console.log(numbers);   // [10, 11, 12, 13, 14, 15] A sensible sequence of numbe
 
 Or go directly to the array.
 
-### Exercise
+### Exercise (add using splice)
 
 Remove first two color names from the array and add in 'DarkSalmon' and 'BlanchedAlmond' in its place
 
@@ -200,7 +200,7 @@ console.log(todaysWeather);   // ['snow', 'sleet']
 console.log(weatherConditions); // ['rain', 'snow', 'sleet', 'hail', 'clear']
 ```
 
-### Exercise
+### Exercise (copy using slice)
 
 - extract 'warm' and 'sunny' and assign it to a new array
 
@@ -215,3 +215,4 @@ function forecast(arr) {
 console.log(forecast(weatherConditions)); // console will display ['warm', 'sunny'] as a result of returning the result of the 'forecast' function globally
 console.log(weatherConditions);  // The original array is not modified ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
 ```
+
