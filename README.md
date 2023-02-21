@@ -324,7 +324,7 @@ function quickCheck(arr, elem) {
 - Or to manipulate an array based on which data items meet certain sets of criteria.
 - There are several built-in methods in JS to iterate through items in slightly different ways to achieve different results.
 - For example every(), forEach(), map()
-- But the most flexible method that provides the greates control is the simpel 'for' loop.
+- But the most flexible method that provides the greatest control is the simple 'for' loop.
 
 ```js
 function greaterThanTen(arr) {
@@ -502,7 +502,7 @@ let foods = {
 
 function checkInventory (scannedItem) {
   let inventory = foods[scannedItem]; // It is not completely necessary to declare a variable for 'foods[scannedItem]'
-  return invetory;                    // you could directly do 'return foods[scannedItem]' and get the same result
+  return inventory;                    // you could directly do 'return foods[scannedItem]' and get the same result
 }
 
 console.log(checkInventory("apples"));  // console will display 25
@@ -662,4 +662,39 @@ function getArrayOfUsers(obj) {
 console.log(getArrayOfUsers(users));  // ['Alan', 'Jeff', 'Sarah', 'Ryan']
 ```
 
-##
+## Modify an Array Stored in an Object
+
+- function 'addFriend' takes 'userObj' and 'friend' as its arguments.
+- Passing the two arguments should add the name of the 'friend' to the 'userObj' under ```user.dat.friends```
+- function should return the updated array
+
+```js
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+// I need to stop overthinking these challenges
+
+function addFriend(userObj, friend) {
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+}
+
+console.log(addFriend(user, 'Pete'));   // ['Sam', 'Kira', 'Tomo', 'Pete']
+```
