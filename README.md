@@ -580,3 +580,52 @@ console.log(isEveryoneHere(users));   // true
 ```
 
 ## Iterate through the Keys of an Object with a for...in Statement
+
+- Sometimes it is necessary to iterate through all the keys (properties) within an object.
+- This can be done using the ```for...in``` statement.
+
+```js
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+for (let user in users) {
+  console.log(user);``// Alan, Jeff, Sarah
+}
+```
+
+- inside the parentheses, variable 'user' is defined using the 'let' keyword.
+- This variable is reset during each iteration to each property.
+- NOTE: Objects do not maintain an ordering to stored keys like arrays do (index position).
+
+### Exercise (for...in)
+
+- function 'countOnline' accepts 'usersObj' as its argument
+- use for...in statement to loop through the object passed
+- return the number of users whose online property is set to 'true'
+
+```js
+function countOnline(usersObj) {
+  let count = 0;                          // Had to think for a while to remember how to return a count value.
+  for (let user in usersObj) {            // declare variable 'user' and look for user in usersObj passed to the function
+    if (usersObj[user].online === true) { // if a user's online property value is set to true
+      count++;                            // increment count by 1.
+    }
+  } return count;                         // After completing iteration of the object, return the total count value
+}
+
+console.log(countOnline(users));          // 1
+```
+
+- REMEMBER - when accessing an object property of which property name I do not know, use bracket notation
+  - Using dot notation - for example ```usersObj.user.online```, this means that I am looking for property 'online' under object 'user' within obj 'userObj'
+  - Remember that 'user' in the code above is a variable that's been declared with a purpose to iterate through an unknown object.
+  - So when searching for something unknown using a declared variable, use bracket notation
