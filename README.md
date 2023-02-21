@@ -528,3 +528,55 @@ delete foods.strawberries;
 
 console.log(foods);   // { apples: 25, bananas: 13, grapes: 35 }
 ```
+
+## Check if an Object has a Property
+
+- use .hasOwnProperty() to check if an object has the specified property (This was covered in the Basic JS module)
+- Another way is to use the ```in``` keyword.
+- If there is an object ```users``` with a property of ```Alan```, both ```in``` and ```.hasOwnProperty()``` can check for its presence
+
+```js
+users.hasOwnProperty('Alan');   // true
+'Alan' in users;                // true
+```
+
+### Exercise (Check object in property)
+
+- function 'isEveryoneHere' takes 'userObj' as its argument
+- The function should return 'true' only if all four names are present in the object passed.
+- Return false otherwise
+
+```js
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(userObj) {
+  if ('Alan' in userObj && 'Jeff' in userObj && 'Sarah' in userObj && 'Ryan' in userObj) {
+    return true;
+    // alternatively, you could use 'if (userObj.hasOwnProperty('Alan') && userObj.hasOwnProperty('Jeff')...)' to specify all of the names in 'userObj'
+    // It seems redundant, but each name must be checked individually
+  } else {
+    return false;
+  }
+}
+
+console.log(isEveryoneHere(users));   // true
+```
+
+## Iterate through the Keys of an Object with a for...in Statement
