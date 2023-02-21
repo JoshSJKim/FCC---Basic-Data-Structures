@@ -360,3 +360,40 @@ function filteredArray(arr, elem) {
   return newArr;
 }
 ```
+
+## Create Complex Multi-dimensional Arrays
+
+- Multi-dimensional arrays, or nested arrays, can become quite complex
+
+```js
+let nestedArray = [
+  ['deep'],                     // 2 levels
+  [
+    ['deeper'], ['deeper']      // 3 levels
+  ],
+  [
+    [
+      ['deepest'], ['deepest']  // 4 levels
+    ],
+    [
+      [
+        ['deepest-est?']        // 5 levels
+      ]
+    ]
+  ]
+];
+```
+
+- It is very common to create complex arrays, especially when dealing with large amounts of data.
+- No matter how complex, it is still quite easy to access complex arrays with bracket notation
+
+```js
+console.log(nestedArray[2][1][0][0][0]); // 'deepest-est?'
+```
+
+- The above element can be reassigned with a new value
+
+```js
+nestedArray[2][1][0][0][0] = 'deeper still';
+```
+
