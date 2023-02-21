@@ -629,3 +629,37 @@ console.log(countOnline(users));          // 1
   - Using dot notation - for example ```usersObj.user.online```, this means that I am looking for property 'online' under object 'user' within obj 'userObj'
   - Remember that 'user' in the code above is a variable that's been declared with a purpose to iterate through an unknown object.
   - So when searching for something unknown using a declared variable, use bracket notation
+
+## Generate an Array of All Object Keys with Object.keys()
+
+- Object.keys() is used to generate an array that contains all of the keys stored in an object
+- It takes an object as its argument and returns an array of strings that represent each property in the object.
+
+```js
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  return Object.keys(obj);    // I don't think this needs further explanation
+}
+
+console.log(getArrayOfUsers(users));  // ['Alan', 'Jeff', 'Sarah', 'Ryan']
+```
+
+##
