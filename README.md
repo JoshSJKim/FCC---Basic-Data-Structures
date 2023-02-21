@@ -508,4 +508,23 @@ function checkInventory (scannedItem) {
 console.log(checkInventory("apples"));  // console will display 25
 ```
 
-##
+## Use the delete Keyword to Remove Object Properties
+
+This is quite self-explanatory
+
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+delete foods.oranges;
+delete foods.plums;
+delete foods.strawberries;
+
+console.log(foods);   // { apples: 25, bananas: 13, grapes: 35 }
+```
