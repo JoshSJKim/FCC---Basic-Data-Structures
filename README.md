@@ -317,3 +317,46 @@ function quickCheck(arr, elem) {
   return arr.indexOf(elem) != -1;
 }
 ```
+
+## Iterate through Array's Items using for Loops
+
+- It's very useful to be able to iterate through items in an array to find one or more elements as needed.
+- Or to manipulate an array based on which data items meet certain sets of criteria.
+- There are several built-in methods in JS to iterate through items in slightly different ways to achieve different results.
+- For example every(), forEach(), map()
+- But the most flexible method that provides the greates control is the simpel 'for' loop.
+
+```js
+function greaterThanTen(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 10) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+console.log(greaterThanTen([2, 12, 8, 14, 80, 0, 1]));    // [12, 14, 80]
+```
+
+- The simple function shown above will iterate through an array passed to the function as its argument and it will push elements that have values greater than 10 to newly declared array 'newArr'.
+
+### Exercise (for loop iteration)
+
+- function 'filteredArray' takes nested array 'arr' and element 'elem' as its arguments, and it will return a new array
+- 'elem' represents an element that may or may not exist in the nested array passed.
+- Modify the function using a for loop
+  - to return a filtered version of the array such that any array nested within 'arr' containing 'elem' is removed.
+
+```js
+function filteredArray(arr, elem) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) == -1) {   // This will iterate through the subarrays and look for 'elem'. 
+      newArr.push(arr[i]);              // If specified 'elem' is not found in the subarray, push that subarray into 'newArr'
+    }
+  }
+  return newArr;
+}
+```
