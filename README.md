@@ -447,3 +447,40 @@ const tekkenCharacter = {
 ```
 
 - NOTE: If you use bracket notation for assigning a new property that does not have a space in its name (ex. tekkenCharacter['hair'];), the quote marks will not appear in the object.
+
+## Modify an Object Nested within an Object
+
+- Object properties can be nested to an arbitrary depth.
+- It can contain arrays, and even other objects.
+
+- you can use dot or bracket notation to access properties in an object.
+
+```js
+let userActivity = {
+  id: 35364567334,
+  date: 'February 20, 2023',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+// in order to change the data pertaining to property 'online' to 45, access the property using dot notation as shown below
+userActivity.data.online = 45;
+
+// Or you could use bracket notation as shown below
+userActivity['data']['online'] = 45;
+// bracket notation can be used if the property name consists of more than one word (i.e. has a space)
+// although it is okay to use bracket notation for single word property names, it's inefficient.
+// Just use dot notation unless it's necessary to use bracket notation.
+
+console.log(userActivity);   
+/* console will display
+{ id: 35364567334,
+date: 'February 20, 2023', 
+data: {total Users: 51, online: 45}
+} */
+```
+
+## Access Property Names with Bracket Notation
+
