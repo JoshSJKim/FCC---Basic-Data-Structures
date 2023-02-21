@@ -397,3 +397,53 @@ console.log(nestedArray[2][1][0][0][0]); // 'deepest-est?'
 nestedArray[2][1][0][0][0] = 'deeper still';
 ```
 
+## Add Key-value Pairs to JavaScript Objects
+
+- At their most basic, objects are just collections of key-value pairs.
+- In other words, they are pieces of data (values) paired to unique identifiers called properties (keys).
+
+```js
+const tekkenCharacter = {
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true
+};
+```
+
+- Shown above is an object called 'tekkenCharacter'.
+- It has three properties (keys) and corresponding data (value).
+- If you want to add another property, it can be done by assigning it to the object.
+
+```js
+tekkenCharacter.origin = 'South Korea';
+```
+
+- The above example uses dot notation to add a property.
+- Bracket notation can be used as well.
+
+```js
+tekkenCharacter['hair color'] = 'dyed orange';
+```
+
+- use bracket notation if the property name has a space in it, (use single or double quote)
+- or if you want to use a pre-declared variable as the property name. (no need for quote marks)
+
+```js
+const eyes = 'eye color';
+tekkenCharacter[eyes] = 'brown';
+```
+
+The final result would look like below
+
+```js
+const tekkenCharacter = {
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true,
+  origin: 'South Korea',
+  'hair color': 'dyed orange',
+  'eye color': 'brown'
+};
+```
+
+- NOTE: If you use bracket notation for assigning a new property that does not have a space in its name (ex. tekkenCharacter['hair'];), the quote marks will not appear in the object.
