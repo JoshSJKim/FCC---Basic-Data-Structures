@@ -484,3 +484,28 @@ data: {total Users: 51, online: 45}
 
 ## Access Property Names with Bracket Notation
 
+- Bracket notation can be used as a means to access property values using the evaluation of a variable.
+
+- function 'checkInventory' receives 'scannedItem' as its argument.
+- The function should return the current value (inventory) of the 'scannedItem' key from the 'foods' object.
+- If the item does not exist in the object, it will return 'undefined'
+
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13, 
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory (scannedItem) {
+  let inventory = foods[scannedItem]; // It is not completely necessary to declare a variable for 'foods[scannedItem]'
+  return invetory;                    // you could directly do 'return foods[scannedItem]' and get the same result
+}
+
+console.log(checkInventory("apples"));  // console will display 25
+```
+
+##
